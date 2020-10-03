@@ -18,7 +18,7 @@ pipeline{
             aws ecr create-repository \
                 --repository-name ${APP_REPO_NAME}
                 --image-scanning-configuration scanOnPush=false \
-                --image-mutability MUTABLE\
+                --image-tag-mutability MUTABLE\
                 --region ${AWS_REGION}
                 """
             }
