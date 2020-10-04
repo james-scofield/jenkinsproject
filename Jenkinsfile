@@ -13,14 +13,14 @@ pipeline{
              
         stage('Create ECR Repo') {
             steps {
-            echo 'Creating ECR Repository' 
-            sh """
-            aws ecr create-repository \
-                --repository-name ${APP_REPO_NAME} \
-                --image-scanning-configuration scanOnPush=false \
-                --image-tag-mutability MUTABLE \
-                --region ${AWS_REGION}
-            """
+                echo 'Creating ECR Repository' 
+                sh """
+                aws ecr create-repository \
+                    --repository-name ${APP_REPO_NAME} \
+                    --image-scanning-configuration scanOnPush=false \
+                    --image-tag-mutability MUTABLE \
+                    --region ${AWS_REGION}
+                """
             }
         }        
         
